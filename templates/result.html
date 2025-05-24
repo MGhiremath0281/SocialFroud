@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+</head>
+<body>
+  <h2>Analysis Result</h2>
+  {% if fraud %}
+    <p style="color:red;">⚠️ Fraudulent Account Detected</p>
+    <ul>{% for r in reasons %}<li>{{ r }}</li>{% endfor %}</ul>
+  {% else %}
+    <p style="color:green;">✅ Account is Safe</p>
+  {% endif %}
+  <h3>Profile Data</h3>
+  <ul>
+    {% for k, v in profile.items() %}
+      <li>{{ k }}: {{ v }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
